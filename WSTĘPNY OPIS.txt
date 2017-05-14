@@ -1,0 +1,12 @@
+Serwis do oceny ksi¹¿ek w ASP.NET (coœ jak filmweb tylko o ksi¹¿kach)
+
+funkcjonalnoœci:
+
+-rejestracja
+-logowanie
+-ocenianie poszczególnych ksi¹¿ek przez u¿ytkowników
+-komentowanie ksi¹¿ek przez u¿ytkowników
+-grupowanie znajomych na naszym koncie
+-grupowanie ocenionych przez nas ksi¹¿ek
+-wyœwietlanie na stronie g³ównej co nasi znajomi ostatnio ocenili i skomentowali
+-dodawanie nowych ksi¹¿ek przez administratora, zarz¹dzanie kontami komentarzami i ksi¹¿kami
