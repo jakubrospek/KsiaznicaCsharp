@@ -16,8 +16,22 @@ namespace KsiaznicaCsharp
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Account", action = "LogIn", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "SignIn",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Account", action = "SignIn", id = UrlParameter.Optional }
+            );
+
+            /*
+            routes.MapRoute(
+                name: "temporary",
+                url: "Home/temporary/{id}",
+                defaults: new { controller = "Home", action = "temporary", id = UrlParameter.Optional }
+            );*/
+
         }
     }
 }
