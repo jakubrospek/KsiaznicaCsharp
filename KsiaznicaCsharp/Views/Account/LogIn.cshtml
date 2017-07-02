@@ -1,4 +1,12 @@
-﻿<!doctype html>
+﻿
+@model KsiaznicaCsharp.ViewModels.LoginViewModel
+
+@{ 
+        ViewBag.Title = "Login";
+}
+
+
+<!doctype html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -16,18 +24,11 @@
 
         <div id="sidebar">
             <nav id="menu">
-
                 <ul>
                     <li><a href="@Url.Action("LogIn")">Zaloguj</a></li>
                     <li><a href="@Url.Action("SignIn")">Zarejestruj</a></li>
                 </ul>
             </nav>
-
-            <?php
-
-            require_once('kodPHP/Menu.php');
-
-            ?>
 
             <aside>
 
@@ -45,25 +46,30 @@
                 <h2>Zaloguj</h2>
 
                 <article>
+                    <!--<form action="Zaloguj.php" method="post">-->
+                @using (@Html.BeginForm("LogIn", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <p>@Html.LabelFor(o => o.Login)
+                    @Html.TextBoxFor(o => o.Login)
+                    @Html.ValidationMessageFor(o => o.Login)</p><br>
+                    <p>@Html.LabelFor(o => o.Password)
+                    @Html.TextBoxFor(o => o.Password)
+                    @Html.ValidationMessageFor(o => o.Password)</p><br>
+                        <p>@Html.CheckBoxFor(m => m.RememberMe, new { @checked = "checked" })
+                        @Html.LabelFor(m => m.RememberMe)</p><br>
 
-                    <form action="Zaloguj.php" method="post">
-                        <p>Login: <input type="text" name="Login" /></p></br>
-                        <p>Hasło: <input type="password" name="Haslo" /></p></br>
+                        <!-- <p>Login: <input type="text" name="Login" /></p><br>
+                        <p>Hasło: <input type="password" name="Haslo" /></p><br> -->
                         <input type="submit" value="Zaloguj" name="submit" />
-                    </form>
-
-                    <?php
-
-                    require_once('kodPHP/Log.php');
-
-                    ?>
-
+                }
+                     <!--</form>-->
                 </article>
 
             </section>
 
         </div>
-
+                
         <footer>
 
             <p>

@@ -14,15 +14,15 @@ namespace KsiaznicaCsharp
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Account", action = "LogIn", id = UrlParameter.Optional }
+                name: "SignIn",
+                url: "Account/SignIn/{id}",
+                defaults: new { controller = "Account", action = "SignIn", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
-                name: "SignIn",
+                name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Account", action = "SignIn", id = UrlParameter.Optional }
+                defaults: new { controller = "Account", action = "LogIn", id = UrlParameter.Optional }
             );
 
             /*
